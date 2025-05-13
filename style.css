@@ -1,0 +1,72 @@
+/* Warna khas Barcelona: merah anggur dan biru tua */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1d1f2f;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #a50044;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+nav a {
+    color: #ffd700;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+main {
+    padding: 20px;
+    background-color: #2e2e4d;
+}
+
+h1, h2 {
+    color: #ffd700;
+}
+
+img {
+    border: 3px solid #a50044;
+    border-radius: 8px;
+    margin: 10px;
+}
+main img {
+    transition: transform 0.3s ease;
+}
+/* LIGHT THEME – versi yang lebih lembut */
+body.light-theme {
+    background-color: #f4f4f4; /* abu muda netral */
+    color: #1d1f2f; /* biru tua */
+}
+
+body.light-theme header {
+    background-color: #ffffff;
+    color: #a50044;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme nav a {
+    color: #a50044;
+}
+
+body.light-theme nav a:hover {
+    color: #ffcc00;
+}
+
+body.light-theme main {
+    background-color: #ffffff;
+}
+
+body.light-theme img {
+    border-color: #a50044;
+    background-color: #ffffff;
+}

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #004d98;
+            padding: 20px 0;
+            color: white;
+            position: relative;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ffed02;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ffed02;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0051a0 0%, #a50044 100%);
+            color: white;
+        }
+
+        .typing-text {
+            font-size: 48px;
+            margin-bottom: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #ffed02;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            animation: blink 0.7s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .highlight {
+            color: #ffed02;
+            display: inline;
+        }
+
+        /* Tambahan animasi bounce untuk gambar */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .profile-pic {
+            margin: 30px auto 20px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #ffed02;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            animation: bounce 2s infinite;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+        }
+
+        .desc {
+            font-size: 18px;
+            color: #f0f0f0;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .primary {
+            background-color: #a50044;
+            color: white;
+            border: none;
+        }
+
+        .primary:hover {
+            background-color: #8c0039;
+        }
+
+        .secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #a50044;
+            color: white;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: #ffed02;
+            color: #004d98;
+            transform: translateY(-3px);
+        }
+
+        /* Digital Clock Style - diubah jadi putih */
+        #digital-clock {
+            font-size: 18px;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            color: #f0f0f0;
+            font-size: 14px;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Personal Web</a>
+            <nav class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="blog.php">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Digital Clock -->
+        <div id="digital-clock"></div>
+    </header>
+
+    <main class="hero">
+        <div class="container">
+            <h1 class="typing-text">Hello, I'm <span id="typed-name" class="highlight"></span></h1>
+
+            <!-- Foto Profil dengan animasi -->
+            <div class="profile-pic">
+                <img src="images/joxra.jpg" alt="Foto Jonathan Rahasia" />
+            </div>
+
+            <p class="subtitle">Welcome to my personal website</p>
+            <p class="desc">This is where I showcase my work, share my thoughts, and connect with others.</p>
+
+            <div class="buttons">
+                <a href="gallery.html" class="btn primary">View My Gallery</a>
+                <a href="contact.html" class="btn secondary">Get In Touch</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-twitter" aria-label="Twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram" aria-label="Instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in" aria-label="LinkedIn"></i></a>
+                <a href="#"><i class="fab fa-github" aria-label="GitHub"></i></a>
+            </div>
+
+            <footer>© 2025. All Rights Reserved.</footer>
+        </div>
+    </main>
+
+    <script>
+        const text = "Jonathan Rahasia";
+        const speed = 100;
+        let i = 0;
+
+        function typeEffect() {
+            if (i < text.length) {
+                document.getElementById("typed-name").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeEffect, speed);
+            }
+        }
+
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById("digital-clock").innerText = `${hours}:${minutes}:${seconds}`;
+        }
+
+        window.onload = () => {
+            typeEffect();
+            updateClock();
+            setInterval(updateClock, 1000);
+        };
+    </script>
+</body>
+</html>

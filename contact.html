@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: #004d98;
+      padding: 20px 0;
+      color: white;
+      position: relative;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ffed02;
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #ffed02;
+    }
+
+    main {
+      background: linear-gradient(135deg, #0051a0 0%, #a50044 100%);
+      color: white;
+      padding: 80px 20px;
+    }
+
+    .contact-box {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 10px;
+      max-width: 700px;
+      margin: 0 auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contact-box h1 {
+      color: #ffed02;
+      margin-bottom: 30px;
+      font-size: 32px;
+      text-align: center;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+
+    .contact-info p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .contact-info a {
+      color: #ffed02;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 0.7s;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .btn-submit {
+      background-color: #ffed02;
+      color: #004d98;
+      font-weight: bold;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #fff25c;
+    }
+
+    .social-icons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons a {
+      color: white;
+      background-color: #a50044;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      font-size: 18px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 1s;
+    }
+
+    .social-icons a:hover {
+      background-color: #ffed02;
+      color: #004d98;
+      transform: translateY(-3px);
+    }
+
+    #clock {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 16px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInUp 1s ease-out forwards;
+      animation-delay: 0.2s;
+    }
+
+    footer {
+      text-align: center;
+      color: #f0f0f0;
+      font-size: 14px;
+      padding: 20px 0;
+      background-color: #004d98;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Personal Web</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.php">Blog</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+    <div id="clock"></div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="contact-box">
+        <h1>Hubungi Saya</h1>
+        <div class="contact-info">
+          <p>Email: <a href="mailto:jonathanrahasia026@student.unsrat.ac.id">jonathanrahasia026@student.unsrat.ac.id</a></p>
+          <p>Telepon: <a href="tel:+6281242117917">0812 4211 7917</a></p>
+        </div>
+
+        <form action="#" method="post">
+          <input type="text" name="name" placeholder="Nama Anda" required>
+          <input type="email" name="email" placeholder="Email Anda" required>
+          <textarea name="message" placeholder="Pesan Anda" required></textarea>
+          <button type="submit" class="btn-submit">Kirim Pesan</button>
+        </form>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter" aria-label="Twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram" aria-label="Instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in" aria-label="LinkedIn"></i></a>
+          <a href="#"><i class="fab fa-github" aria-label="GitHub"></i></a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Clock functionality
+    function updateClock() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString();
+      document.getElementById('clock').textContent = timeString;
+    }
+
+    // Update clock every second
+    setInterval(updateClock, 1000);
+    updateClock(); // Initial update
+  </script>
+</body>
+</html>
